@@ -1,6 +1,7 @@
 #include <iostream>
 #include <opencv2/core/core.hpp>
-#include <opencv2/features2d/features2d.hpp>
+// #include <opencv2/features2d/features2d.hpp>
+#include <opencv2/features2d.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <chrono>
 
@@ -13,8 +14,8 @@ int main(int argc, char **argv) {
     return 1;
   }
   //-- 读取图像
-  Mat img_1 = imread(argv[1], CV_LOAD_IMAGE_COLOR);
-  Mat img_2 = imread(argv[2], CV_LOAD_IMAGE_COLOR);
+  Mat img_1 = imread(argv[1], cv::IMREAD_COLOR);
+  Mat img_2 = imread(argv[2], cv::IMREAD_COLOR);
   assert(img_1.data != nullptr && img_2.data != nullptr);
 
   //-- 初始化
